@@ -67164,7 +67164,7 @@ function Header() {
       position: 'fixed',
       zIndex: 1,
       width: '80%',
-      top: '20px',
+      marginTop: '90px',
       paddingBottom: '30px',
       minHeight: '120px'
     },
@@ -67177,6 +67177,7 @@ function Header() {
       },
       __self: this
     }, __jsx(Title, {
+      id: "header",
       color: "highlight-color",
       __source: {
         fileName: _jsxFileName,
@@ -67391,15 +67392,16 @@ function (_React$Component) {
       var lineLength = .75 * this.state.width;
       var midpoint = 600 / 2; // const x_arr = [75, 340, 540, 630, 840];
 
-      var triggers = ['#t1', '#t2'];
-      var x_arr = [1200, 1300];
-      var timeline_end_x = 1500;
+      var triggers = ['#t1', '#t2', '#t3', '#t4'];
+      var x_arr = [350, 650, 850, 1050];
+      var timeline_adjust_right = this.state.width + 50;
       var timeline_points = x_arr.map(function (element, i) {
         var down = i % 2 == 0 ? false : true;
+        var x_change = -1 * timeline_adjust_right;
         return __jsx(react_scrollmagic__WEBPACK_IMPORTED_MODULE_14__["Controller"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 51
           },
           __self: this
         }, __jsx(react_scrollmagic__WEBPACK_IMPORTED_MODULE_14__["Scene"], {
@@ -67408,7 +67410,7 @@ function (_React$Component) {
           pin: false,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 52
           },
           __self: this
         }, function (progress) {
@@ -67425,7 +67427,7 @@ function (_React$Component) {
                 opacity: '1'
               },
               attr: {
-                transform: 'translate(-800 0)'
+                transform: 'translate(' + x_change + ' 0)'
               },
               ease: 'Strong.easeOut',
               duration: '100'
@@ -67434,40 +67436,40 @@ function (_React$Component) {
             paused: true,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 57
+              lineNumber: 59
             },
             __self: this
           }, __jsx("g", {
             id: "animate3",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 71
+              lineNumber: 73
             },
             __self: this
           }, __jsx(DataPoint, {
             midpoint: midpoint,
-            xPoint: x_arr[i],
+            xPoint: x_arr[i] + timeline_adjust_right,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 72
+              lineNumber: 74
             },
             __self: this
           }), __jsx(DataLine, {
             midpoint: midpoint,
-            xPoint: x_arr[i],
+            xPoint: x_arr[i] + timeline_adjust_right,
             up: down,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 73
+              lineNumber: 75
             },
             __self: this
           }), __jsx(Image, {
-            x: x_arr[i] - 30,
+            x: x_arr[i] - 30 + timeline_adjust_right,
             y: midpoint + (down ? -150 : 90),
             midpoint: midpoint,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 74
+              lineNumber: 76
             },
             __self: this
           })));
@@ -67477,20 +67479,20 @@ function (_React$Component) {
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 87
         },
         __self: this
       }, __jsx(antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 88
         },
         __self: this
       }, __jsx(antd_lib_affix__WEBPACK_IMPORTED_MODULE_5___default.a, {
         offsetTop: 300,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 90
         },
         __self: this
       }, __jsx("svg", {
@@ -67498,13 +67500,13 @@ function (_React$Component) {
         height: midpoint * 2,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 91
         },
         __self: this
       }, __jsx(react_scrollmagic__WEBPACK_IMPORTED_MODULE_14__["Controller"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 92
         },
         __self: this
       }, __jsx(react_scrollmagic__WEBPACK_IMPORTED_MODULE_14__["Scene"], {
@@ -67513,7 +67515,7 @@ function (_React$Component) {
         pin: false,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 93
         },
         __self: this
       }, function (progress) {
@@ -67529,7 +67531,7 @@ function (_React$Component) {
           paused: true,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 93
+            lineNumber: 95
           },
           __self: this
         }, __jsx("line", {
@@ -67543,7 +67545,7 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 102
+            lineNumber: 104
           },
           __self: this
         }), __jsx("circle", {
@@ -67553,14 +67555,218 @@ function (_React$Component) {
           r: "9",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 103
+            lineNumber: 105
           },
           __self: this
         }));
-      })), timeline_points))), __jsx(antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      })), timeline_points, __jsx(react_scrollmagic__WEBPACK_IMPORTED_MODULE_14__["Controller"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125
+          lineNumber: 114
+        },
+        __self: this
+      }, __jsx(react_scrollmagic__WEBPACK_IMPORTED_MODULE_14__["Scene"], {
+        triggerElement: "#t5",
+        duration: 2000,
+        pin: false,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 115
+        },
+        __self: this
+      }, function (progress) {
+        return __jsx(react_gsap__WEBPACK_IMPORTED_MODULE_15__["Tween"], {
+          from: {
+            attr: {
+              opacity: '0'
+            }
+          },
+          to: {
+            attr: {
+              opacity: '1'
+            }
+          },
+          ease: "Strong.easeOut",
+          totalProgress: progress,
+          paused: true,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 117
+          },
+          __self: this
+        }, __jsx("text", {
+          x: "95%",
+          fill: "black",
+          fontSize: "24px",
+          textAnchor: "end",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 130
+          },
+          __self: this
+        }, __jsx("tspan", {
+          x: "94%",
+          y: midpoint - 100,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 131
+          },
+          __self: this
+        }, "From Seattle"), __jsx("tspan", {
+          x: "94%",
+          y: midpoint - 70,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 132
+          },
+          __self: this
+        }, "living in Oakland,")), __jsx("text", {
+          x: "97%",
+          fill: "black",
+          fontSize: "24px",
+          textAnchor: "end",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 135
+          },
+          __self: this
+        }, __jsx("tspan", {
+          x: "94%",
+          y: midpoint + 100,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 136
+          },
+          __self: this
+        }, "passionate about data science"), __jsx("tspan", {
+          x: "94%",
+          y: midpoint + 130,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 137
+          },
+          __self: this
+        }, "music, weather forecasting"), __jsx("tspan", {
+          x: "94%",
+          y: midpoint + 160,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 138
+          },
+          __self: this
+        }, "and all things skiing.")));
+      }))))), __jsx(antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 148
+        },
+        __self: this
+      }, __jsx(antd_lib_col__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        span: 24,
+        style: {
+          height: '100px'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 149
+        },
+        __self: this
+      }, __jsx("div", {
+        id: "t1",
+        style: {
+          color: 'black',
+          fontSize: '20px'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 150
+        },
+        __self: this
+      }, "TRIGGER"))), __jsx(antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 156
+        },
+        __self: this
+      }, __jsx(antd_lib_col__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        span: 24,
+        style: {
+          height: '200px'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 157
+        },
+        __self: this
+      }, __jsx("div", {
+        id: "t2",
+        style: {
+          color: 'black',
+          fontSize: '20px'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 158
+        },
+        __self: this
+      }), "TRIGGER 2/>")), __jsx(antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 163
+        },
+        __self: this
+      }, __jsx(antd_lib_col__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        span: 24,
+        style: {
+          height: '200px'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 164
+        },
+        __self: this
+      }, __jsx("div", {
+        id: "t3",
+        style: {
+          color: 'black',
+          fontSize: '20px'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 165
+        },
+        __self: this
+      }), "TRIGGER 3/>")), __jsx(antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 170
+        },
+        __self: this
+      }, __jsx(antd_lib_col__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        span: 24,
+        style: {
+          height: '500px'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 171
+        },
+        __self: this
+      }, __jsx("div", {
+        id: "t4",
+        style: {
+          color: 'black',
+          fontSize: '20px'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 172
+        },
+        __self: this
+      }), "TRIGGER 4/>")), __jsx(antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 176
         },
         __self: this
       }, __jsx(antd_lib_col__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -67570,34 +67776,21 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126
+          lineNumber: 177
         },
         __self: this
       }, __jsx("div", {
-        id: "t1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 127
-        },
-        __self: this
-      })), __jsx(antd_lib_col__WEBPACK_IMPORTED_MODULE_1___default.a, {
-        span: 24,
+        id: "t5",
         style: {
-          height: '500px'
+          color: 'black',
+          fontSize: '20px'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129
+          lineNumber: 178
         },
         __self: this
-      }, __jsx("div", {
-        id: "t2",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 130
-        },
-        __self: this
-      }))));
+      }), "TRIGGER 5/>")));
     }
   }]);
 
@@ -67614,7 +67807,7 @@ function DataPoint(props) {
     r: "9",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141
+      lineNumber: 190
     },
     __self: this
   });
@@ -67633,7 +67826,7 @@ function DataLine(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 196
     },
     __self: this
   });
@@ -67653,7 +67846,7 @@ function Image(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 207
     },
     __self: this
   });

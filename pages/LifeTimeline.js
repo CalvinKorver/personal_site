@@ -39,12 +39,13 @@ export default class LifeTimeline extends React.Component {
         const lineLength = .75 * this.state.width;
         const midpoint = 600 / 2;
         // const x_arr = [75, 340, 540, 630, 840];
-        const triggers = ['#t1', '#t2']
-        const x_arr = [1200, 1300];
-        const timeline_end_x = 1500;
+        const triggers = ['#t1', '#t2', '#t3', '#t4'];
+        const x_arr = [350, 650, 850, 1050];
+        const timeline_adjust_right = this.state.width + 50;
 
         const timeline_points = x_arr.map((element, i)  => {
             var down = (i % 2 == 0 ? false : true);
+            const x_change = - 1 * timeline_adjust_right;
             return(
 
                 <Controller>
@@ -52,6 +53,7 @@ export default class LifeTimeline extends React.Component {
                     triggerElement={triggers[i]}
                     duration={1000}
                     pin={false}>
+
 
                     {(progress) => (
                             <Tween            
@@ -62,16 +64,16 @@ export default class LifeTimeline extends React.Component {
                                 }}
                               to={{
                                 css: {opacity: '1'},
-                                attr: {transform: 'translate(-800 0)'},
+                                attr: {transform: 'translate(' + x_change + ' 0)'},
                                 ease: 'Strong.easeOut',
                                 duration: '100'
                               }}
                               totalProgress={progress}
                               paused>
                         <g id="animate3" >
-                            <DataPoint midpoint={midpoint} xPoint={x_arr[i]} />
-                            <DataLine midpoint={midpoint} xPoint={x_arr[i]} up={down}/>
-                            <Image x={x_arr[i] - 30} y={midpoint + (down? -150:90)} midpoint={midpoint}/>   
+                            <DataPoint midpoint={midpoint} xPoint={x_arr[i] + timeline_adjust_right} />
+                            <DataLine midpoint={midpoint} xPoint={x_arr[i] + timeline_adjust_right} up={down}/>
+                            <Image x={x_arr[i] - 30 + timeline_adjust_right} y={midpoint + (down? -150:90)} midpoint={midpoint}/>   
                         </g> 
                     </Tween>
                     )}
@@ -109,25 +111,72 @@ export default class LifeTimeline extends React.Component {
                         
                         {timeline_points}
 
-                        {/* <text x="95%" y="50" fill="black" fontSize="24px" textAnchor="end">
-                            <tspan x="95%" y="60">living in Oakland, CA. </tspan>
-                            <tspan x="95%" y="90">from Seattle. </tspan>
+                        <Controller>
+                    <Scene triggerElement="#t5" duration={2000} pin={false}>
+                    {(progress) => (
+                            <Tween            
+                            from={{
+                                attr: { opacity: '0' },
+                              }}
+                              to={{
+                                  attr: {
+                                      opacity: '1'
+                                  }
+                              }}       
+                              ease="Strong.easeOut"
+                              totalProgress={progress}
+                              paused>
+
+                        <text x="95%"  fill="black" fontSize="24px" textAnchor="end">
+                            <tspan x="94%" y={midpoint - 100}>From Seattle</tspan>
+                            <tspan x="94%" y={midpoint - 70}>living in Oakland,</tspan>
                         </text>
 
-                        <text x="97%" y={midpoint * 2 + 30} fill="black" fontSize="24px" textAnchor="end">
-                            <tspan x="97%" y={400 - 70}>passionate about data science, music,</tspan>
-                            <tspan x="97%" y={400 - 40}>weather, and all things skiing.</tspan>
-                        </text> */}
+                        <text x="97%"  fill="black" fontSize="24px" textAnchor="end">
+                            <tspan x="94%" y={midpoint + 100}>passionate about data science</tspan>
+                            <tspan x="94%" y={midpoint + 130}>music, weather forecasting</tspan>
+                            <tspan x="94%" y={midpoint + 160}>and all things skiing.</tspan>
+                        </text>
+                        </Tween>
+                         )}
+                         </Scene>
+                       </Controller>
                     </svg>
                     </Affix>
                 {/* </Col> */}
             </Row>
             <Row>
-            <Col span={24} style={{height: '1000px'}}>
-                <div id="t1" />
+            <Col span={24} style={{height: '100px'}}>
+                <div id="t1" style={{ color: 'black', fontSize: '20px'}}>
+                TRIGGER
+                </div>
+            </Col>
+            </Row>
+            
+            <Row>
+            <Col span={24} style={{height: '200px'}}>
+                <div id="t2" style={{ color: 'black', fontSize: '20px'}}/>
+                TRIGGER 2/>
                 </Col>
-                <Col span={24} style={{height: '500px'}}>
-                <div id="t2" />
+            </Row>
+
+            <Row>
+            <Col span={24} style={{height: '200px'}}>
+                <div id="t3" style={{ color: 'black', fontSize: '20px'}}/>
+                TRIGGER 3/>
+                </Col>
+            </Row>
+
+            <Row>
+            <Col span={24} style={{height: '500px'}}>
+                <div id="t4" style={{ color: 'black', fontSize: '20px'}}/>
+                TRIGGER 4/>
+                </Col>
+            </Row>
+            <Row>
+            <Col span={24} style={{height: '1000px'}}>
+                <div id="t5" style={{ color: 'black', fontSize: '20px'}}/>
+                TRIGGER 5/>
                 </Col>
             </Row>
             </div>

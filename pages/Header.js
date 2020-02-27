@@ -8,9 +8,9 @@ export default function Header() {
         <Row justify="space-around" type="flex" className='top'>
             {/* <Col  span={20} style={{ paddingTop: '68px', paddingBottom: '30px', minHeight: '100px' }}> */}
                 <PageHeader
-                    style={{ position: 'fixed', zIndex: 1, width: '80%', top: '20px', paddingBottom: '30px', minHeight: '120px'}}
+                    style={{ position: 'fixed', zIndex: 1, width: '80%', marginTop: '90px', paddingBottom: '30px', minHeight: '120px'}}
                     className='header'
-                    backIcon={<Link href='/'><Title color='highlight-color'>Calvin Korver</Title></Link>}
+                    backIcon={<Link href='/'><Title id='header' color='highlight-color'>Calvin Korver</Title></Link>}
                     onBack={() => null}
                     ghost={false}
                     extra={[
