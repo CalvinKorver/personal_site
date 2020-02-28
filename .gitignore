@@ -38,5 +38,6 @@ Thumbs.db
 node_modules
 cache
 
-./next/static/webpack
-./next/server
+.next/static/webpack
+.next/server
+

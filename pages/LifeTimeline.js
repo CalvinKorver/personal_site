@@ -42,6 +42,7 @@ export default class LifeTimeline extends React.Component {
         const triggers = ['#t1', '#t2', '#t3', '#t4'];
         const x_arr = [350, 650, 850, 1050];
         const timeline_adjust_right = this.state.width + 50;
+        const images = ['fuji', 'adl', 'uw', 'cali', 'wday'];
 
         const timeline_points = x_arr.map((element, i)  => {
             var down = (i % 2 == 0 ? false : true);
@@ -73,7 +74,8 @@ export default class LifeTimeline extends React.Component {
                         <g id="animate3" >
                             <DataPoint midpoint={midpoint} xPoint={x_arr[i] + timeline_adjust_right} />
                             <DataLine midpoint={midpoint} xPoint={x_arr[i] + timeline_adjust_right} up={down}/>
-                            <Image x={x_arr[i] - 30 + timeline_adjust_right} y={midpoint + (down? -150:90)} midpoint={midpoint}/>   
+                            <Image
+                                x={x_arr[i] - 33 + timeline_adjust_right} y={midpoint + (down? -155:95)} midpoint={midpoint} href={images[i]}/>   
                         </g> 
                     </Tween>
                     )}
@@ -101,8 +103,8 @@ export default class LifeTimeline extends React.Component {
                               totalProgress={progress}
                               paused>
                             
-                        <line className = "timeline" x1={this.state.width * 0.7} y1={midpoint} x2="100%" y2={midpoint} style={{ strokeWidth: 4 }} />
-                        <circle className="label-circle" cx={this.state.width * 0.7} cy={midpoint} r='9' />
+                        <line className = "timeline" x1={this.state.width * 0.8} y1={midpoint} x2="100%" y2={midpoint} style={{ strokeWidth: 4 }} />
+                        <circle className="label-circle" cx={this.state.width * 0.8} cy={midpoint} r='9' />
                         </Tween> 
                     )}
                     </Scene>
@@ -146,7 +148,7 @@ export default class LifeTimeline extends React.Component {
                 {/* </Col> */}
             </Row>
             <Row>
-            <Col span={24} style={{height: '100px'}}>
+            <Col span={24} style={{height: '100px', top:'-20vh'}}>
                 <div id="t1" style={{ color: 'black', fontSize: '20px'}}>
                 TRIGGER
                 </div>
@@ -204,7 +206,7 @@ function DataLine(props) {
 
 function Image(props) {
     return (
-        <rect x={props.x} y={props.y} width="60" height="60" style={{ strokeWidth: 1, stroke: 'black', strokeDasharray: 4, fill: 'white'}}/>
+        <image x={props.x} y={props.y} width='66px' height='66px' href={'/images/' + props.href + '.png'}> </image>
     )
 }
 

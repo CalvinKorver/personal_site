@@ -2242,13 +2242,14 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
     const triggers = ['#t1', '#t2', '#t3', '#t4'];
     const x_arr = [350, 650, 850, 1050];
     const timeline_adjust_right = this.state.width + 50;
+    const images = ['fuji', 'adl', 'uw', 'cali', 'wday'];
     const timeline_points = x_arr.map((element, i) => {
       var down = i % 2 == 0 ? false : true;
       const x_change = -1 * timeline_adjust_right;
       return __jsx(react_scrollmagic__WEBPACK_IMPORTED_MODULE_8__["Controller"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 52
         },
         __self: this
       }, __jsx(react_scrollmagic__WEBPACK_IMPORTED_MODULE_8__["Scene"], {
@@ -2257,7 +2258,7 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
         pin: false,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 53
         },
         __self: this
       }, progress => __jsx(react_gsap__WEBPACK_IMPORTED_MODULE_9__["Tween"], {
@@ -2282,14 +2283,14 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
         paused: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 60
         },
         __self: this
       }, __jsx("g", {
         id: "animate3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 74
         },
         __self: this
       }, __jsx(DataPoint, {
@@ -2297,7 +2298,7 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
         xPoint: x_arr[i] + timeline_adjust_right,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 75
         },
         __self: this
       }), __jsx(DataLine, {
@@ -2306,16 +2307,17 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
         up: down,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 76
         },
         __self: this
       }), __jsx(Image, {
-        x: x_arr[i] - 30 + timeline_adjust_right,
-        y: midpoint + (down ? -150 : 90),
+        x: x_arr[i] - 33 + timeline_adjust_right,
+        y: midpoint + (down ? -155 : 95),
         midpoint: midpoint,
+        href: images[i],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 77
         },
         __self: this
       })))));
@@ -2324,20 +2326,20 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 89
       },
       __self: this
     }, __jsx(antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 90
       },
       __self: this
     }, __jsx(antd_lib_affix__WEBPACK_IMPORTED_MODULE_5___default.a, {
       offsetTop: 300,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90
+        lineNumber: 92
       },
       __self: this
     }, __jsx("svg", {
@@ -2345,13 +2347,13 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       height: midpoint * 2,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 93
       },
       __self: this
     }, __jsx(react_scrollmagic__WEBPACK_IMPORTED_MODULE_8__["Controller"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 94
       },
       __self: this
     }, __jsx(react_scrollmagic__WEBPACK_IMPORTED_MODULE_8__["Scene"], {
@@ -2360,7 +2362,7 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       pin: false,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 95
       },
       __self: this
     }, progress => __jsx(react_gsap__WEBPACK_IMPORTED_MODULE_9__["Tween"], {
@@ -2375,12 +2377,12 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       paused: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 95
+        lineNumber: 97
       },
       __self: this
     }, __jsx("line", {
       className: "timeline",
-      x1: this.state.width * 0.7,
+      x1: this.state.width * 0.8,
       y1: midpoint,
       x2: "100%",
       y2: midpoint,
@@ -2389,23 +2391,23 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 104
+        lineNumber: 106
       },
       __self: this
     }), __jsx("circle", {
       className: "label-circle",
-      cx: this.state.width * 0.7,
+      cx: this.state.width * 0.8,
       cy: midpoint,
       r: "9",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 105
+        lineNumber: 107
       },
       __self: this
     })))), timeline_points, __jsx(react_scrollmagic__WEBPACK_IMPORTED_MODULE_8__["Controller"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114
+        lineNumber: 116
       },
       __self: this
     }, __jsx(react_scrollmagic__WEBPACK_IMPORTED_MODULE_8__["Scene"], {
@@ -2414,7 +2416,7 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       pin: false,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 115
+        lineNumber: 117
       },
       __self: this
     }, progress => __jsx(react_gsap__WEBPACK_IMPORTED_MODULE_9__["Tween"], {
@@ -2433,7 +2435,7 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       paused: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 117
+        lineNumber: 119
       },
       __self: this
     }, __jsx("text", {
@@ -2443,7 +2445,7 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       textAnchor: "end",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 130
+        lineNumber: 132
       },
       __self: this
     }, __jsx("tspan", {
@@ -2451,7 +2453,7 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       y: midpoint - 100,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 131
+        lineNumber: 133
       },
       __self: this
     }, "From Seattle"), __jsx("tspan", {
@@ -2459,7 +2461,7 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       y: midpoint - 70,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 132
+        lineNumber: 134
       },
       __self: this
     }, "living in Oakland,")), __jsx("text", {
@@ -2469,7 +2471,7 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       textAnchor: "end",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 135
+        lineNumber: 137
       },
       __self: this
     }, __jsx("tspan", {
@@ -2477,7 +2479,7 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       y: midpoint + 100,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 136
+        lineNumber: 138
       },
       __self: this
     }, "passionate about data science"), __jsx("tspan", {
@@ -2485,7 +2487,7 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       y: midpoint + 130,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 137
+        lineNumber: 139
       },
       __self: this
     }, "music, weather forecasting"), __jsx("tspan", {
@@ -2493,23 +2495,24 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       y: midpoint + 160,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 138
+        lineNumber: 140
       },
       __self: this
     }, "and all things skiing.")))))))), __jsx(antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 148
+        lineNumber: 150
       },
       __self: this
     }, __jsx(antd_lib_col__WEBPACK_IMPORTED_MODULE_1___default.a, {
       span: 24,
       style: {
-        height: '100px'
+        height: '100px',
+        top: '-20vh'
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 149
+        lineNumber: 151
       },
       __self: this
     }, __jsx("div", {
@@ -2520,13 +2523,13 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 150
+        lineNumber: 152
       },
       __self: this
     }, "TRIGGER"))), __jsx(antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 156
+        lineNumber: 158
       },
       __self: this
     }, __jsx(antd_lib_col__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -2536,7 +2539,7 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 157
+        lineNumber: 159
       },
       __self: this
     }, __jsx("div", {
@@ -2547,13 +2550,13 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 158
+        lineNumber: 160
       },
       __self: this
     }), "TRIGGER 2/>")), __jsx(antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 163
+        lineNumber: 165
       },
       __self: this
     }, __jsx(antd_lib_col__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -2563,7 +2566,7 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 164
+        lineNumber: 166
       },
       __self: this
     }, __jsx("div", {
@@ -2574,13 +2577,13 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 165
+        lineNumber: 167
       },
       __self: this
     }), "TRIGGER 3/>")), __jsx(antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 170
+        lineNumber: 172
       },
       __self: this
     }, __jsx(antd_lib_col__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -2590,7 +2593,7 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 171
+        lineNumber: 173
       },
       __self: this
     }, __jsx("div", {
@@ -2601,13 +2604,13 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 172
+        lineNumber: 174
       },
       __self: this
     }), "TRIGGER 4/>")), __jsx(antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 176
+        lineNumber: 178
       },
       __self: this
     }, __jsx(antd_lib_col__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -2617,7 +2620,7 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 177
+        lineNumber: 179
       },
       __self: this
     }, __jsx("div", {
@@ -2628,7 +2631,7 @@ class LifeTimeline extends react__WEBPACK_IMPORTED_MODULE_6___default.a.Componen
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 178
+        lineNumber: 180
       },
       __self: this
     }), "TRIGGER 5/>")));
@@ -2644,7 +2647,7 @@ function DataPoint(props) {
     r: "9",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 190
+      lineNumber: 192
     },
     __self: this
   });
@@ -2663,30 +2666,25 @@ function DataLine(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 196
+      lineNumber: 198
     },
     __self: this
   });
 }
 
 function Image(props) {
-  return __jsx("rect", {
+  return __jsx("image", {
     x: props.x,
     y: props.y,
-    width: "60",
-    height: "60",
-    style: {
-      strokeWidth: 1,
-      stroke: 'black',
-      strokeDasharray: 4,
-      fill: 'white'
-    },
+    width: "66px",
+    height: "66px",
+    href: '/images/' + props.href + '.png',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 207
+      lineNumber: 209
     },
     __self: this
-  });
+  }, " ");
 }
 
 /***/ }),
